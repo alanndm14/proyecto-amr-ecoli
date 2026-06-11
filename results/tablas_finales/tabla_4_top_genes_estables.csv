@@ -1,0 +1,17 @@
+Antibiótico,Gen/señal AMR,Frecuencia de selección,Fracción de selección,Rango medio,Importancia media absoluta
+Cefotaxime,ctx-m-15,15,1.0,1.4,0.652407
+Cefotaxime,ctx-m_family,15,1.0,1.733333,0.644212
+Cefotaxime,cmy-2,15,1.0,3.466667,0.525094
+Cefotaxime,ctx-m-14,15,1.0,4.666667,0.512261
+Cefotaxime,extended-spectrum_class_a_beta-lactamase_ctx-m-15,15,1.0,4.8,0.490932
+Cefotaxime,multispecies_class_c_beta-lactamase_cmy-2,15,1.0,6.133333,0.461246
+Cefotaxime,multispecies_class_a_extended-spectrum_beta-lactamase_ctx-m-15,15,1.0,6.6,0.454099
+Cefotaxime,multispecies_class_a_extended-spectrum_beta-lactamase_ctx-m-14,15,1.0,8.933333,0.392454
+Ciprofloxacin,escherichia_quinolone_resistant_parc,15,1.0,1.2,0.812164
+Ciprofloxacin,escherichia_coli_parc_conferring_resistance_to_fluoroquinolones,15,1.0,1.866667,0.784133
+Ciprofloxacin,escherichia_quinolone_resistant_gyra,15,1.0,2.933333,0.691956
+Ciprofloxacin,escherichia_coli_gyra_conferring_resistance_to_fluoroquinolones,15,1.0,4.0,0.449744
+Ciprofloxacin,catb3,15,1.0,5.333333,0.350012
+Ciprofloxacin,escherichia_quinolone_resistant_pare,15,1.0,5.866667,0.317047
+Ciprofloxacin,extended-spectrum_class_a_beta-lactamase_ctx-m-15,15,1.0,9.133333,0.254933
+Ciprofloxacin,blaec,15,1.0,9.4,0.254733

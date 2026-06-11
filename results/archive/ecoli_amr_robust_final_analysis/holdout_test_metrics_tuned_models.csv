@@ -1,0 +1,5 @@
+antibiotic,model,n_train,n_test,n_features,accuracy,balanced_accuracy,f1_resistant,roc_auc,recall_resistant,precision_resistant,specificity_susceptible,true_susceptible,false_resistant,false_susceptible,true_resistant,confusion_matrix
+ciprofloxacin,logistic_regression_balanced,5850,1463,633,0.8742,0.8452,0.7598,0.906,0.7865,0.7348,0.9039,988,105,79,291,"[[988, 105], [79, 291]]"
+ciprofloxacin,random_forest_balanced,5850,1463,633,0.8729,0.8398,0.7546,0.92,0.773,0.7371,0.9067,991,102,84,286,"[[991, 102], [84, 286]]"
+cefotaxime,logistic_regression_balanced,5272,1318,560,0.8915,0.8294,0.7212,0.894,0.7283,0.7143,0.9305,990,74,69,185,"[[990, 74], [69, 185]]"
+cefotaxime,random_forest_balanced,5272,1318,560,0.8816,0.7918,0.6777,0.8997,0.6457,0.713,0.938,998,66,90,164,"[[998, 66], [90, 164]]"

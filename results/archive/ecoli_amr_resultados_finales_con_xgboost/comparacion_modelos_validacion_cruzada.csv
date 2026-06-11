@@ -1,0 +1,7 @@
+antibiotic,model,model_label,cv_balanced_accuracy_mean,cv_balanced_accuracy_std,cv_f1_resistant_mean,cv_f1_resistant_std,cv_roc_auc_mean,cv_roc_auc_std,cv_recall_resistant_mean,cv_recall_resistant_std,best_params
+ciprofloxacin,logistic_regression_balanced,Regresión logística balanceada,0.844994,0.012948,0.764675,0.018433,0.91083,0.013879,0.775818,0.022194,"{""logisticregression__C"": 0.1, ""logisticregression__penalty"": ""l1""}"
+ciprofloxacin,random_forest_balanced,Bosque aleatorio balanceado,0.847151,0.012258,0.761572,0.016625,0.921867,0.009358,0.791691,0.02453,"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 4}"
+ciprofloxacin,xgboost_weighted,XGBoost ponderado,0.844394,0.012653,0.772208,0.02014,0.916349,0.011745,0.75894,0.021493,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""max_depth"": 3, ""min_child_weight"": 1, ""subsample"": 1.0}"
+cefotaxime,logistic_regression_balanced,Regresión logística balanceada,0.825103,0.012872,0.707499,0.016251,0.887209,0.014198,0.729895,0.027285,"{""logisticregression__C"": 0.1, ""logisticregression__penalty"": ""l1""}"
+cefotaxime,random_forest_balanced,Bosque aleatorio balanceado,0.805941,0.013015,0.674923,0.014609,0.890987,0.009712,0.702386,0.029356,"{""max_depth"": 25, ""max_features"": ""sqrt"", ""min_samples_leaf"": 4}"
+cefotaxime,xgboost_weighted,XGBoost ponderado,0.815504,0.013228,0.712122,0.021509,0.893686,0.010025,0.690599,0.023555,"{""colsample_bytree"": 1.0, ""learning_rate"": 0.1, ""max_depth"": 5, ""min_child_weight"": 1, ""subsample"": 1.0}"

@@ -1,0 +1,46 @@
+Resumen final del cruce fenotipo-genotipo
+
+Fenotipos limpios
+- Filas fenotípicas limpias: 13,903
+- Genomas únicos con fenotipo: 7,688
+
+Genes AMR
+- Registros de genes AMR recibidos: 249,949
+- Registros únicos genome_id-predictor usados: 236,027
+- Genomas cubiertos por genes: 7,688
+- Variables AMR generadas: 1,153
+
+Datasets finales
+- Ciprofloxacin:
+  - Genomas: 7,313
+  - Resistant: 1,851
+  - Susceptible: 5,462
+  - Variables AMR completas: 1,153
+  - Variables model_ready: 633
+
+- Cefotaxime:
+  - Genomas: 6,590
+  - Resistant: 1,272
+  - Susceptible: 5,318
+  - Variables AMR completas: 1,153
+  - Variables model_ready: 560
+
+Archivos recomendados para el siguiente paso
+1. dataset_ciprofloxacin_model_ready.csv
+2. dataset_cefotaxime_model_ready.csv
+3. train_baseline_models.py
+
+Nota metodológica
+Los archivos "full" conservan todas las variables AMR.
+Los archivos "model_ready" eliminan variables casi constantes: presentes en menos de 5 genomas o ausentes en menos de 5 genomas. Esto evita columnas casi inútiles para el primer modelo.
+
+
+Prueba rápida de modelos base
+Estos resultados son exploratorios con train/test 80/20 estratificado. No sustituyen la validación final con validación cruzada.
+
+| antibiotic    | model                        |   n_samples |   n_features |   accuracy |   balanced_accuracy |   f1_resistant |   roc_auc | confusion_matrix        |
+|:--------------|:-----------------------------|------------:|-------------:|-----------:|--------------------:|---------------:|----------:|:------------------------|
+| ciprofloxacin | logistic_regression_balanced |        7313 |          633 |     0.8619 |              0.8289 |         0.7363 |    0.8787 | [[979, 114], [88, 282]] |
+| ciprofloxacin | random_forest_balanced       |        7313 |          633 |     0.8756 |              0.8461 |         0.7618 |    0.922  | [[990, 103], [79, 291]] |
+| cefotaxime    | logistic_regression_balanced |        6590 |          560 |     0.8771 |              0.819  |         0.6943 |    0.8697 | [[972, 92], [70, 184]]  |
+| cefotaxime    | random_forest_balanced       |        6590 |          560 |     0.8976 |              0.7987 |         0.7059 |    0.9097 | [[1021, 43], [92, 162]] |

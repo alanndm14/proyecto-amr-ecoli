@@ -1,0 +1,31 @@
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# Environments and editors
+.venv/
+venv/
+.conda/
+.vscode/
+.idea/
+
+# Temporary files and generated reruns
+*.tmp
+*.temp
+*.log
+~$*
+results/*_reproduced/
+results/*_reproduced.zip
+
+# Large raw BV-BRC exports: use Git LFS or an external link
+data/raw/*.csv
+data/raw/*.tsv
+data/raw/*.zip
+specialty_genes_ecoli_amr.csv
+
+# Operating systems
+.DS_Store
+Thumbs.db

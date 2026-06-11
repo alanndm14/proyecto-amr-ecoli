@@ -1,0 +1,3 @@
+antibiotic,n_samples,n_features,n_susceptible,n_resistant,resistant_fraction,n_train,n_test,train_susceptible,train_resistant,scale_pos_weight_xgboost_train,duplicated_genome_ids
+ciprofloxacin,7313,633,5462,1851,0.253111,5850,1463,4369,1481,2.950034,0
+cefotaxime,6590,560,5318,1272,0.19302,5272,1318,4254,1018,4.178782,0

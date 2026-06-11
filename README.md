@@ -1,0 +1,174 @@
+# Prediccion de resistencia antimicrobiana en *Escherichia coli*
+
+Repositorio reproducible del proyecto de prediccion de resistencia a
+ciprofloxacin y cefotaxime mediante genes AMR codificados como presencia/ausencia.
+
+## Objetivo
+
+Comparar modelos supervisados capaces de predecir si un genoma de
+*Escherichia coli* es resistente o susceptible a cada antibiotico. Se evaluaron:
+
+1. Regresion logistica balanceada.
+2. Random forest balanceado.
+3. XGBoost ponderado.
+4. Perceptron multicapa (MLP) ponderado y evaluado con siete semillas.
+
+La metrica principal fue `balanced_accuracy`. Tambien se revisaron ROC-AUC,
+F1 y recall para resistentes, especificidad y falsos susceptibles.
+
+## Origen de los datos
+
+Los genomas, fenotipos de susceptibilidad antimicrobiana y anotaciones de genes
+AMR provienen de [BV-BRC](https://www.bv-brc.org/). Se conservaron registros de
+*E. coli* con fenotipo de laboratorio Resistant/Susceptible para ciprofloxacin
+y cefotaxime.
+
+El archivo crudo de Specialty Genes supera 100 MB y no se versiona en Git
+normal. Consulte `data/raw/README.md` y `data/external_links.md`.
+
+## Estructura
+
+```text
+proyecto-amr-ecoli/
+|-- README.md
+|-- requirements.txt
+|-- .gitignore
+|-- data/
+|   |-- raw/
+|   |-- processed/
+|   `-- external_links.md
+|-- scripts/
+|-- results/
+|-- figures/
+|-- report/
+`-- docs/
+```
+
+- `data/processed/`: datos limpios, matrices de presencia/ausencia y datasets finales.
+- `scripts/`: scripts activos reproducibles; `scripts/archive/` conserva originales.
+- `results/optimized/`: regresion logistica, random forest y XGBoost.
+- `results/mlp/`: MLP multisemilla integrado como cuarto modelo.
+- `results/robustness_method/`: validacion por metodo y leave-method-out.
+- `results/tablas_finales/`: tablas usadas en el informe.
+- `figures/`: figuras finales numeradas del 1 al 7.
+- `report/`: informe final, borrador y material listo para insertar.
+- `docs/`: preparacion, revision y manifiesto de archivos.
+
+## Instalacion
+
+Se recomienda Python 3.10 o superior:
+
+```bash
+python -m venv .venv
+```
+
+En Windows:
+
+```bash
+.venv\Scripts\activate
+python -m pip install -r requirements.txt
+```
+
+En Linux/macOS:
+
+```bash
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+## Reproduccion
+
+### Ejecutar todos los analisis
+
+Desde la raiz del repositorio:
+
+```bash
+python scripts/run_all_analyses.py
+```
+
+La secuencia usa la corrida optimizada ligera que genero los resultados
+reportados: 5 iteraciones por familia de modelos, 100 bootstraps y un solo
+trabajo paralelo. La corrida completa puede tardar alrededor de 1-2 horas.
+
+### Ejecutar bloques individuales
+
+Reconstruir matrices y datasets model-ready desde los datos limpios:
+
+```bash
+python scripts/prepare_model_data.py
+```
+
+Modelos optimizados principales:
+
+```bash
+python scripts/run_optimized_models.py --n_iter_logreg 5 --n_iter_rf 5 --n_iter_xgb 5 --n_boot 100 --n_jobs_search 1 --verbose 1
+```
+
+MLP como cuarto modelo:
+
+```bash
+python scripts/run_mlp_multiseed.py
+```
+
+Robustez leave-method-out por metodo de laboratorio:
+
+```bash
+python scripts/run_robustness_by_lab_method.py
+```
+
+## Resultados finales
+
+Los modelos seleccionados fueron regresiones logisticas balanceadas para ambos
+antibioticos. En holdout alcanzaron:
+
+| Antibiotico | Balanced accuracy | ROC-AUC |
+|---|---:|---:|
+| Ciprofloxacin | 0.844 | 0.906 |
+| Cefotaxime | 0.827 | 0.893 |
+
+El MLP se conserva como cuarto modelo comparativo. No supero la balanced
+accuracy de la regresion logistica, pero redujo ligeramente falsos susceptibles
+en ambos antibioticos.
+
+Archivos principales:
+
+- `results/optimized/modelos_seleccionados_resumen.csv`
+- `results/optimized/metricas_holdout_todos_los_modelos.csv`
+- `results/mlp/comparacion_holdout_modelos_previos_mas_mlp.csv`
+- `results/robustness_method/robustez_leave_method_out.csv`
+- `results/tablas_finales/tabla_2_comparacion_modelos_incluye_mlp.csv`
+- `report/informe_final.pdf`
+
+## Figuras y tablas del informe
+
+Las figuras finales son exactamente:
+
+1. `figures/figura_1_flujo_general.png`
+2. `figures/figura_2_comparacion_balanced_accuracy_modelos.png`
+3. `figures/figura_3_falsos_susceptibles_modelos.png`
+4. `figures/figura_4_matrices_confusion_modelos_seleccionados.png`
+5. `figures/figura_5_genes_estables_ciprofloxacin.png`
+6. `figures/figura_6_genes_estables_cefotaxime.png`
+7. `figures/figura_7_robustez_leave_method_out.png`
+
+No se usa la numeracion 5A/5B en este repositorio.
+
+Las tablas finales estan en `results/tablas_finales/`, incluyendo composicion de
+datasets, comparacion de los cuatro modelos, robustez leave-method-out, genes
+estables y resumen del MLP.
+
+## Reproducibilidad y trazabilidad
+
+- Semilla principal: `42`.
+- Holdout estratificado: 80/20.
+- Modelos principales seleccionados mediante validacion cruzada repetida.
+- MLP evaluado con siete semillas y ensemble de probabilidades.
+- Robustez evaluada dejando fuera metodos de laboratorio completos.
+- Scripts y resultados anteriores se conservan en carpetas `archive`.
+
+El MLP puede mostrar diferencias numericas pequenas entre equipos aun usando
+semillas fijas, debido a operaciones de algebra lineal y versiones de
+bibliotecas. Los resultados originales usados en el informe se conservan en
+`results/mlp/`; consulte `docs/REPRODUCIBILITY_NOTES.md`.
+
+Consulte `docs/FILE_MANIFEST.md` para el inventario detallado.

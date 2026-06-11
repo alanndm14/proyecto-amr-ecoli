@@ -1,0 +1,3 @@
+antibiotic,model,n_samples,n_features,accuracy,balanced_accuracy,f1_resistant,roc_auc,confusion_matrix
+cefotaxime,logistic_regression_balanced,6590,560,0.8771,0.819,0.6943,0.8697,"[[972, 92], [70, 184]]"
+cefotaxime,random_forest_balanced,6590,560,0.8953,0.7928,0.6974,0.9086,"[[1021, 43], [95, 159]]"

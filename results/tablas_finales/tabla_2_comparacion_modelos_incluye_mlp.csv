@@ -1,0 +1,9 @@
+Antibiótico,Modelo,Balanced accuracy,ROC-AUC,F1 resistente,Recall resistente,Especificidad susceptible,Falsos susceptibles,Falsos resistentes
+Ciprofloxacin,Regresión logística balanceada,0.844316,0.90585,0.759162,0.783784,0.904849,80,104
+Ciprofloxacin,Random forest balanceado,0.837144,0.922398,0.75266,0.764865,0.909424,87,99
+Ciprofloxacin,XGBoost ponderado,0.836271,0.907045,0.753351,0.759459,0.913083,89,95
+Ciprofloxacin,MLP ponderado (promedio 7 semillas),0.8350621893622808,0.9025024109196114,0.7338308457711443,0.7972972972972973,0.8728270814272644,75,139
+Cefotaxime,Regresión logística balanceada,0.82743,0.893371,0.71875,0.724409,0.930451,70,74
+Cefotaxime,Random forest balanceado,0.791335,0.878893,0.622896,0.728346,0.854323,69,155
+Cefotaxime,XGBoost ponderado,0.809891,0.886171,0.690058,0.69685,0.922932,77,82
+Cefotaxime,MLP ponderado (promedio 7 semillas),0.8175359658989995,0.8927498371914038,0.6762075134168157,0.7440944881889764,0.8909774436090225,65,116
