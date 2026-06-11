@@ -10,13 +10,13 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-ORIGINAL_SCRIPT = Path(__file__).with_name("run_optimized_models_original.py")
+CORE_SCRIPT = Path(__file__).with_name("optimized_models_core.py")
 
 
 def load_original():
-    spec = importlib.util.spec_from_file_location("optimized_original", ORIGINAL_SCRIPT)
+    spec = importlib.util.spec_from_file_location("optimized_core", CORE_SCRIPT)
     if spec is None or spec.loader is None:
-        raise RuntimeError(f"No se pudo cargar {ORIGINAL_SCRIPT}")
+        raise RuntimeError(f"No se pudo cargar {CORE_SCRIPT}")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module

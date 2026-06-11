@@ -1,5 +1,7 @@
 # Predicción de resistencia antimicrobiana en *Escherichia coli*
 
+[![Validar repositorio](https://github.com/alanndm14/proyecto-amr-ecoli/actions/workflows/validate.yml/badge.svg)](https://github.com/alanndm14/proyecto-amr-ecoli/actions/workflows/validate.yml)
+
 Repositorio reproducible del proyecto de predicción de resistencia a
 ciprofloxacin y cefotaxime mediante genes AMR codificados como presencia/ausencia.
 
@@ -45,14 +47,14 @@ proyecto-amr-ecoli/
 ```
 
 - `data/processed/`: datos limpios, matrices de presencia/ausencia y datasets finales.
-- `scripts/`: scripts activos reproducibles; `scripts/archive/` conserva originales.
+- `scripts/`: scripts reproducibles y validación del repositorio.
 - `results/optimized/`: regresión logística, random forest y XGBoost.
 - `results/mlp/`: MLP multisemilla integrado como cuarto modelo.
 - `results/robustness_method/`: validación por método y leave-method-out.
 - `results/tablas_finales/`: tablas usadas en el informe.
 - `figures/`: figuras finales numeradas del 1 al 7.
 - `report/`: informe final, borrador y material listo para insertar.
-- `docs/`: preparación, revisión y manifiesto de archivos.
+- `docs/`: preparación, revisión, diccionario de datos y notas metodológicas.
 
 ## Instalación
 
@@ -116,6 +118,12 @@ Robustez leave-method-out por método de laboratorio:
 python scripts/run_robustness_by_lab_method.py
 ```
 
+Comprobar que la estructura, codificación y archivos finales estén completos:
+
+```bash
+python scripts/validate_repository.py
+```
+
 ## Resultados finales
 
 Los modelos seleccionados fueron regresiones logísticas balanceadas para ambos
@@ -151,7 +159,6 @@ Las figuras finales son exactamente:
 6. `figures/figura_6_genes_estables_cefotaxime.png`
 7. `figures/figura_7_robustez_leave_method_out.png`
 
-
 Las tablas finales están en `results/tablas_finales/`, incluyendo composición de
 datasets, comparación de los cuatro modelos, robustez leave-method-out, genes
 estables y resumen del MLP.
@@ -163,7 +170,7 @@ estables y resumen del MLP.
 - Modelos principales seleccionados mediante validación cruzada repetida.
 - MLP evaluado con siete semillas y ensemble de probabilidades.
 - Robustez evaluada dejando fuera métodos de laboratorio completos.
-- Scripts y resultados anteriores se conservan en carpetas `archive`.
+- La rama principal conserva únicamente datos, scripts y resultados necesarios.
 
 El MLP puede mostrar diferencias numéricas pequeñas entre equipos aún usando
 semillas fijas, debido a operaciones de álgebra lineal y versiones de

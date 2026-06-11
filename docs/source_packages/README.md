@@ -11,3 +11,6 @@ El repositorio fue ensamblado a partir de estos paquetes entregados:
 Los contenidos relevantes fueron extraídos y organizados en `data/`, `scripts/`,
 `results/`, `figures/`, `report/` y `docs/`. Los ZIP originales permanecen en
 la carpeta Descargas del equipo y no se duplican dentro del repositorio.
+
+Las corridas preliminares y archivos duplicados no forman parte de la rama
+principal. Se conservaron únicamente los resultados utilizados en el informe.

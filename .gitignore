@@ -20,6 +20,11 @@ venv/
 results/*_reproduced/
 results/*_reproduced.zip
 
+# Intermedios reconstruibles
+data/processed/gene_presence_matrix_all_project_genomes.csv
+data/processed/dataset_*_gene_presence_full.csv
+data/processed/specialty_genes_ecoli_amr_filtered_to_project_genomes.csv
+
 # Large raw BV-BRC exports: use Git LFS or an external link
 data/raw/*.csv
 data/raw/*.tsv

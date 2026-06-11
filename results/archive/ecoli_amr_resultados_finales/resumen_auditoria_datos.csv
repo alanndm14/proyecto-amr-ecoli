@@ -1,3 +1,0 @@
-antibiotic,n_samples,n_features,n_susceptible,n_resistant,resistant_fraction,duplicated_genome_ids
-ciprofloxacin,7313,633,5462,1851,0.253111,0
-cefotaxime,6590,560,5318,1272,0.19302,0

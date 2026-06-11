@@ -1,5 +1,0 @@
-antibiotic,model,best_inner_cv_balanced_accuracy,best_params
-ciprofloxacin,logistic_regression_balanced,0.8445,"{""logisticregression__C"": 0.1, ""logisticregression__penalty"": ""l1""}"
-ciprofloxacin,random_forest_balanced,0.8376,"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 2}"
-cefotaxime,logistic_regression_balanced,0.8236,"{""logisticregression__C"": 0.1, ""logisticregression__penalty"": ""l1""}"
-cefotaxime,random_forest_balanced,0.7634,"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 2}"

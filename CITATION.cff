@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Si utiliza este repositorio, cite este proyecto."
+title: "Predicción de resistencia antimicrobiana en Escherichia coli mediante aprendizaje automático basado en genes AMR"
+type: software
+authors:
+  - family-names: "Díaz Mora"
+    given-names: "Alan Yael"
+  - family-names: "Kim"
+    given-names: "Soo Yeon"
+  - family-names: "Franco Anaya"
+    given-names: "Juan Ramón"
+  - family-names: "Ugalde Flores"
+    given-names: "Jimena"
+repository-code: "https://github.com/alanndm14/proyecto-amr-ecoli"
+date-released: "2026-06-11"
