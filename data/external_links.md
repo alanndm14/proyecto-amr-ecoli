@@ -23,5 +23,3 @@ git lfs install
 git lfs track "data/raw/*.csv"
 ```
 
-No es necesario descargar el archivo crudo para reproducir los modelos finales;
-los datasets `model_ready` se incluyen en `data/processed/`.
