@@ -89,7 +89,7 @@ Genes más estables del modelo seleccionado:
 
 ## Conclusión general
 
-La comparación optimizada muestra si la señal de genes AMR permite clasificar de manera consistente genomas resistentes y susceptibles a ciprofloxacin y cefotaxime. El uso de búsqueda aleatoria controlada, validación cruzada repetida, conjunto retenido independiente, intervalos de confianza bootstrap y estabilidad de genes permite presentar estos resultados como análisis final del modelo base optimizado, no como una corrida preliminar.
+La comparación optimizada muestra si la señal de genes AMR permite clasificar de manera consistente genomas resistentes y susceptibles a ciprofloxacin y cefotaxime. 
 
 ## Limitaciones
 
