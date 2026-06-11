@@ -151,7 +151,6 @@ Las figuras finales son exactamente:
 6. `figures/figura_6_genes_estables_cefotaxime.png`
 7. `figures/figura_7_robustez_leave_method_out.png`
 
-No se usa la numeración 5A/5B en este repositorio.
 
 Las tablas finales están en `results/tablas_finales/`, incluyendo composición de
 datasets, comparación de los cuatro modelos, robustez leave-method-out, genes
