@@ -1,19 +1,19 @@
-# Prediccion de resistencia antimicrobiana en *Escherichia coli*
+# Predicción de resistencia antimicrobiana en *Escherichia coli*
 
-Repositorio reproducible del proyecto de prediccion de resistencia a
+Repositorio reproducible del proyecto de predicción de resistencia a
 ciprofloxacin y cefotaxime mediante genes AMR codificados como presencia/ausencia.
 
 ## Objetivo
 
 Comparar modelos supervisados capaces de predecir si un genoma de
-*Escherichia coli* es resistente o susceptible a cada antibiotico. Se evaluaron:
+*Escherichia coli* es resistente o susceptible a cada antibiótico. Se evaluaron:
 
-1. Regresion logistica balanceada.
+1. Regresión logística balanceada.
 2. Random forest balanceado.
 3. XGBoost ponderado.
-4. Perceptron multicapa (MLP) ponderado y evaluado con siete semillas.
+4. Perceptrón multicapa (MLP) ponderado y evaluado con siete semillas.
 
-La metrica principal fue `balanced_accuracy`. Tambien se revisaron ROC-AUC,
+La métrica principal fue `balanced_accuracy`. También se revisaron ROC-AUC,
 F1 y recall para resistentes, especificidad y falsos susceptibles.
 
 ## Origen de los datos
@@ -46,15 +46,15 @@ proyecto-amr-ecoli/
 
 - `data/processed/`: datos limpios, matrices de presencia/ausencia y datasets finales.
 - `scripts/`: scripts activos reproducibles; `scripts/archive/` conserva originales.
-- `results/optimized/`: regresion logistica, random forest y XGBoost.
+- `results/optimized/`: regresión logística, random forest y XGBoost.
 - `results/mlp/`: MLP multisemilla integrado como cuarto modelo.
-- `results/robustness_method/`: validacion por metodo y leave-method-out.
+- `results/robustness_method/`: validación por método y leave-method-out.
 - `results/tablas_finales/`: tablas usadas en el informe.
 - `figures/`: figuras finales numeradas del 1 al 7.
 - `report/`: informe final, borrador y material listo para insertar.
-- `docs/`: preparacion, revision y manifiesto de archivos.
+- `docs/`: preparación, revisión y manifiesto de archivos.
 
-## Instalacion
+## Instalación
 
 Se recomienda Python 3.10 o superior:
 
@@ -76,17 +76,17 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-## Reproduccion
+## Reproducción
 
-### Ejecutar todos los analisis
+### Ejecutar todos los análisis
 
-Desde la raiz del repositorio:
+Desde la raíz del repositorio:
 
 ```bash
 python scripts/run_all_analyses.py
 ```
 
-La secuencia usa la corrida optimizada ligera que genero los resultados
+La secuencia usa la corrida optimizada ligera que generó los resultados
 reportados: 5 iteraciones por familia de modelos, 100 bootstraps y un solo
 trabajo paralelo. La corrida completa puede tardar alrededor de 1-2 horas.
 
@@ -110,7 +110,7 @@ MLP como cuarto modelo:
 python scripts/run_mlp_multiseed.py
 ```
 
-Robustez leave-method-out por metodo de laboratorio:
+Robustez leave-method-out por método de laboratorio:
 
 ```bash
 python scripts/run_robustness_by_lab_method.py
@@ -118,17 +118,17 @@ python scripts/run_robustness_by_lab_method.py
 
 ## Resultados finales
 
-Los modelos seleccionados fueron regresiones logisticas balanceadas para ambos
-antibioticos. En holdout alcanzaron:
+Los modelos seleccionados fueron regresiones logísticas balanceadas para ambos
+antibióticos. En holdout alcanzaron:
 
-| Antibiotico | Balanced accuracy | ROC-AUC |
+| Antibiótico | Balanced accuracy | ROC-AUC |
 |---|---:|---:|
 | Ciprofloxacin | 0.844 | 0.906 |
 | Cefotaxime | 0.827 | 0.893 |
 
-El MLP se conserva como cuarto modelo comparativo. No supero la balanced
-accuracy de la regresion logistica, pero redujo ligeramente falsos susceptibles
-en ambos antibioticos.
+El MLP se conserva como cuarto modelo comparativo. No superó la balanced
+accuracy de la regresión logística, pero redujo ligeramente falsos susceptibles
+en ambos antibióticos.
 
 Archivos principales:
 
@@ -151,24 +151,25 @@ Las figuras finales son exactamente:
 6. `figures/figura_6_genes_estables_cefotaxime.png`
 7. `figures/figura_7_robustez_leave_method_out.png`
 
-No se usa la numeracion 5A/5B en este repositorio.
+No se usa la numeración 5A/5B en este repositorio.
 
-Las tablas finales estan en `results/tablas_finales/`, incluyendo composicion de
-datasets, comparacion de los cuatro modelos, robustez leave-method-out, genes
+Las tablas finales están en `results/tablas_finales/`, incluyendo composición de
+datasets, comparación de los cuatro modelos, robustez leave-method-out, genes
 estables y resumen del MLP.
 
 ## Reproducibilidad y trazabilidad
 
 - Semilla principal: `42`.
 - Holdout estratificado: 80/20.
-- Modelos principales seleccionados mediante validacion cruzada repetida.
+- Modelos principales seleccionados mediante validación cruzada repetida.
 - MLP evaluado con siete semillas y ensemble de probabilidades.
-- Robustez evaluada dejando fuera metodos de laboratorio completos.
+- Robustez evaluada dejando fuera métodos de laboratorio completos.
 - Scripts y resultados anteriores se conservan en carpetas `archive`.
 
-El MLP puede mostrar diferencias numericas pequenas entre equipos aun usando
-semillas fijas, debido a operaciones de algebra lineal y versiones de
+El MLP puede mostrar diferencias numéricas pequeñas entre equipos aún usando
+semillas fijas, debido a operaciones de álgebra lineal y versiones de
 bibliotecas. Los resultados originales usados en el informe se conservan en
 `results/mlp/`; consulte `docs/REPRODUCIBILITY_NOTES.md`.
 
 Consulte `docs/FILE_MANIFEST.md` para el inventario detallado.
+Consulte `docs/CODIFICACION.md` para la política de UTF-8 y nombres técnicos.

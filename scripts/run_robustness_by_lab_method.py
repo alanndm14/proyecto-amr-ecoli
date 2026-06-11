@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate logistic-regression robustness by laboratory method."""
+"""Evalúa la robustez de la regresión logística por método de laboratorio."""
 
 from __future__ import annotations
 
@@ -158,7 +158,7 @@ def main() -> None:
     ax.barh(labels, plot["balanced_accuracy"])
     ax.set_xlim(0, 1)
     ax.set_xlabel("Balanced accuracy")
-    ax.set_title("Leave-method-out: regresion logistica balanceada")
+    ax.set_title("Leave-method-out: regresión logística balanceada")
     fig.tight_layout()
     fig.savefig(args.outdir / "figura_robustez_leave_method_out.png", dpi=250)
     plt.close(fig)

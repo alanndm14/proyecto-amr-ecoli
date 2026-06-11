@@ -7,14 +7,14 @@ de genes AMR se obtuvieron de BV-BRC:
 
 - Portal: https://www.bv-brc.org/
 - Organismo: *Escherichia coli*
-- Antibioticos: ciprofloxacin y cefotaxime
-- Clases fenotipicas conservadas: Resistant y Susceptible
+- Antibióticos: ciprofloxacin y cefotaxime
+- Clases fenotípicas conservadas: Resistant y Susceptible
 
 ## Archivo crudo no versionado
 
-| Archivo | Tamano local aproximado | Manejo recomendado |
+| Archivo | Tamaño local aproximado | Manejo recomendado |
 |---|---:|---|
-| `specialty_genes_ecoli_amr.csv` | 915 MB | Git LFS, almacenamiento institucional o nueva exportacion de BV-BRC |
+| `specialty_genes_ecoli_amr.csv` | 915 MB | Git LFS, almacenamiento institucional o nueva exportación de BV-BRC |
 
 Ejemplo para Git LFS:
 

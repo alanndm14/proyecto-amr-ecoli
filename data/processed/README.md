@@ -17,8 +17,8 @@ Las variables predictoras comienzan con `amr__` y representan presencia/ausencia
 - `clean_phenotypes_lab_only_cipro_cefotaxime.csv`: fenotipos limpios.
 - `clean_specialty_genes_amr_project_genomes.csv`: anotaciones AMR limpias.
 - `gene_presence_matrix_all_project_genomes.csv`: matriz binaria completa.
-- `dataset_*_gene_presence_full.csv`: cruces completos por antibiotico.
-- `specialty_genes_ecoli_amr_filtered_to_project_genomes.csv`: exportacion filtrada.
+- `dataset_*_gene_presence_full.csv`: cruces completos por antibiótico.
+- `specialty_genes_ecoli_amr_filtered_to_project_genomes.csv`: exportación filtrada.
 
 `scripts/prepare_model_data.py` reconstruye la matriz binaria, los datasets
 completos y los datasets `model_ready` a partir de los dos archivos limpios.

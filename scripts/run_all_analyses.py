@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the reproducible lightweight analysis sequence from the repository root."""
+"""Ejecuta la secuencia reproducible de análisis desde la raíz del repositorio."""
 
 from __future__ import annotations
 

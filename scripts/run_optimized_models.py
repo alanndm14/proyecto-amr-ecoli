@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the exact optimized three-model analysis with repository-relative paths."""
+"""Ejecuta el análisis optimizado exacto usando rutas relativas al repositorio."""
 
 from __future__ import annotations
 

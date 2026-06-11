@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild gene-presence and model-ready datasets from cleaned project data."""
+"""Reconstruye matrices de presencia y datasets model-ready desde datos limpios."""
 
 from __future__ import annotations
 

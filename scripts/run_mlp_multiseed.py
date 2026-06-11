@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate a weighted multi-seed MLP as the fourth AMR model."""
+"""Evalúa un MLP ponderado multisemilla como cuarto modelo AMR."""
 
 from __future__ import annotations
 
