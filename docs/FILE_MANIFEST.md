@@ -17,7 +17,8 @@
 - `results/robustness_method/`: robustez por método de laboratorio.
 - `results/tablas_finales/`: tablas utilizadas en el informe.
 - `figures/`: figuras finales numeradas del 1 al 7.
-- `report/informe_final.pdf`: informe final entregado.
+- `deliverables/informe_final.pdf`: informe final entregado; esta carpeta también
+  recibe la presentación final en PDF.
 
 ## Documentación
 

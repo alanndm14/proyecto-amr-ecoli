@@ -38,7 +38,7 @@ REQUIRED_FILES = [
     "results/tablas_finales/tabla_3_robustez_leave_method_out.csv",
     "results/tablas_finales/tabla_4_top_genes_estables.csv",
     "results/tablas_finales/tabla_anexo_mlp_resumen_semillas.csv",
-    "report/informe_final.pdf",
+    "deliverables/informe_final.pdf",
 ]
 
 EXPECTED_FIGURES = {

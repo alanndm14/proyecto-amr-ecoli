@@ -42,7 +42,7 @@ proyecto-amr-ecoli/
 |-- scripts/
 |-- results/
 |-- figures/
-|-- report/
+|-- deliverables/
 `-- docs/
 ```
 
@@ -53,7 +53,7 @@ proyecto-amr-ecoli/
 - `results/robustness_method/`: validación por método y leave-method-out.
 - `results/tablas_finales/`: tablas usadas en el informe.
 - `figures/`: figuras finales numeradas del 1 al 7.
-- `report/`: informe final, borrador y material listo para insertar.
+- `deliverables/`: informe final, presentación y material de entrega.
 - `docs/`: preparación, revisión, diccionario de datos y notas metodológicas.
 
 ## Instalación
@@ -145,7 +145,7 @@ Archivos principales:
 - `results/mlp/comparacion_holdout_modelos_previos_mas_mlp.csv`
 - `results/robustness_method/robustez_leave_method_out.csv`
 - `results/tablas_finales/tabla_2_comparacion_modelos_incluye_mlp.csv`
-- `report/informe_final.pdf`
+- `deliverables/informe_final.pdf`
 
 ## Figuras y tablas del informe
 
