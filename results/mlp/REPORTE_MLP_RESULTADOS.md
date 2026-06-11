@@ -42,4 +42,4 @@ Se evaluó un perceptrón multicapa (MLP) ponderado por clase usando el mismo ho
 
 ## Interpretación
 
-El MLP funciona como red neuronal solicitada, pero no superó a la regresión logística balanceada en balanced accuracy de holdout. El resultado más sólido es conservar el MLP como cuarto modelo comparativo y mantener la regresión logística balanceada como modelo final seleccionado. Esto fortalece el reporte porque demuestra que sí se evaluó una red neuronal y que la elección final no fue arbitraria.
+El MLP funciona como red neuronal solicitada, pero no superó a la regresión logística balanceada en balanced accuracy de holdout. El resultado más sólido es conservar el MLP como cuarto modelo comparativo y mantener la regresión logística balanceada como modelo final seleccionado.
