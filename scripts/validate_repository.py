@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import ast
+import json
 from pathlib import Path
 import sys
 
@@ -16,6 +17,7 @@ REQUIRED_FILES = [
     "requirements.txt",
     ".gitignore",
     "CITATION.cff",
+    "docs/Proyecto_Genomica_AMR_Colab.ipynb",
     "data/processed/clean_phenotypes_lab_only_cipro_cefotaxime.csv",
     "data/processed/clean_specialty_genes_amr_project_genomes.csv",
     "data/processed/dataset_ciprofloxacin_model_ready.csv",
@@ -49,7 +51,7 @@ EXPECTED_FIGURES = {
     "figura_7_robustez_leave_method_out.png",
 }
 
-TEXT_SUFFIXES = {".md", ".txt", ".py", ".yml", ".yaml", ".cff"}
+TEXT_SUFFIXES = {".md", ".txt", ".py", ".yml", ".yaml", ".cff", ".ipynb"}
 MOJIBAKE_MARKERS = (
     "\ufffd",
     "\u00c3\u00a1",
@@ -110,6 +112,12 @@ def main() -> int:
                 ast.parse(path.read_text(encoding="utf-8"), filename=str(relative_path))
             except SyntaxError as exc:
                 errors.append(f"Error de sintaxis en {relative_path}: {exc}")
+
+        if path.suffix.lower() == ".ipynb":
+            try:
+                json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:
+                errors.append(f"Notebook JSON invalido en {relative_path}: {exc}")
 
     if errors:
         print("VALIDACION FALLIDA")
